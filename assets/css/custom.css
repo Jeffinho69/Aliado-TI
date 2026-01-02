@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f9;
+    overflow-x: hidden;
+}
+
+/* Sidebar Moderna */
+.sidebar {
+    min-height: 100vh;
+    width: 260px;
+    background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar a {
+    color: rgba(255,255,255,0.8);
+    padding: 15px 25px;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-left-color: #00d2ff;
+}
+
+.sidebar i { width: 25px; text-align: center; margin-right: 10px; }
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 260px; /* Mesma largura da sidebar */
+    padding: 30px;
+    transition: all 0.3s;
+}
+
+/* Cards e Botões */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.btn { border-radius: 8px; font-weight: 600; padding: 8px 16px; }
+.btn-primary { background-color: #1e3c72; border-color: #1e3c72; }
+.btn-primary:hover { background-color: #162c55; }
+
+/* Badges e Status */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+    .sidebar { margin-left: -260px; }
+    .sidebar.active { margin-left: 0; }
+    .main-content { margin-left: 0; }
+}
+
+/* ESCONDER BARRA DE ROLAGEM DA SIDEBAR */
+.sidebar {
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
